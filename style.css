@@ -1,0 +1,73 @@
+h1 {
+    color: rgb(30, 168, 192);
+    font-family: Comic Sans MS
+}
+
+body {
+    background-color: lightpink
+}
+
+h2 {
+    color: rgb(2, 179, 2);
+}
+
+.Pictures {
+    color: skyblue
+}
+
+#US {
+    color: rgb(61, 151, 196)
+}
+
+#Asia {
+    color: palevioletred
+}
+
+#Europe {
+    color: rgb(22, 172, 22)
+}
+
+#World {
+    color: orchid
+}
+
+#favcolor {
+    color: rgb(16, 151, 192);
+}
+
+#favsport {
+    color: rgb(3, 189, 3);
+}
+
+#favanimal {
+    color: rgb(223, 24, 223);
+}
+
+#favbook {
+    color: rgb(61, 151, 196)
+}
+
+#toc_container {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #aaa;
+    display: table;
+    font-size: 95%;
+    margin-bottom: 1em;
+    padding: 20px;
+    width: auto;
+}
+
+.toc_title {
+    font-weight: 700;
+    text-align: center;
+}
+
+#toc_container li,
+#toc_container ul,
+#toc_container ul li {
+    list-style: outside none none !important;
+}
+
+* {
+    color: [color-value];
+}
