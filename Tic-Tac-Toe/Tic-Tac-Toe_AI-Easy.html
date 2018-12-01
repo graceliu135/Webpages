@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Tic-Tac-Toe Game | Grace</title>
+    <title>Tic-Tac-Toe Game- AI Easy | Grace</title>
     <link rel="stylesheet" type="text/css" href="../Tic-Tac-Toe/Tic-Tac-Toe.css" />
     <script type="text/javascript">
     window.onload=function(){
@@ -181,6 +181,36 @@
         turn = turn === 'X' ? 'O' : 'X';
     
     };
+            
+    /**
+     * Render the board again based on the AI response
+     */
+    var renderResponse = function () {
+    
+        // Loop through each square in the currentState and find the first availible square
+
+        var selected = -1;
+        currentState.forEach(function (square, id) {
+    
+            // Variables
+            selected = selected < 0 && square === null ? id : selected;
+
+        });
+
+        if (selected >= 0) {
+            // Update state
+            currentState[selected] = turn;
+    
+            // Add a historical state
+            historyState.push(currentState.slice());
+    
+            // Render with new state
+            updateBoard();
+    
+            // Update turn
+            turn = turn === 'X' ? 'O' : 'X';
+        }
+    };
     
     /**
      * Reset the board to it's base state
@@ -188,7 +218,7 @@
     var resetBoard = function () {
         currentState = baseState();
         historyState = [];
-        turn = 'X';
+        turn = 'O';
         updateBoard();
     };
     
@@ -206,6 +236,7 @@
         // If a .game-square was clicked
         if (event.target.matches('.game-square') && !event.target.hasAttribute('disabled')) {
             renderTurn(event.target);
+            renderResponse();
         }
     
         // If #play-again was clicked
