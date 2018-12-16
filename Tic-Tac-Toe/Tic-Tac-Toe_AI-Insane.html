@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Tic-Tac-Toe Game- AI Easy | Grace</title>
+        <title>Tic-Tac-Toe Game- AI Insane | Grace</title>
         <link rel="stylesheet" type="text/css" href="../Tic-Tac-Toe/Tic-Tac-Toe.css" />
         <script type="text/javascript">
             window.onload = function () {
@@ -70,7 +70,7 @@
                                 newState[id] = value;
                             });
                             newState[id] = whoseTurn;
-                            scores[id] = minimax(newSState, whoseTurn === AI ? Human : AI);
+                            scores[id] = minimax(newState, whoseTurn === AI ? Human : AI);
                         }
                     });
 
@@ -79,7 +79,7 @@
                         var bestMove = null;
                         scores.forEach(function (value, id) {
                             if (value && value.score > maxScore) {
-                                maxScore = value;
+                                maxScore = value.score;
                                 bestMove = id;
                             }
                         });
@@ -90,7 +90,7 @@
                         var bestMove = null;
                         scores.forEach(function (value, id) {
                             if (value && value.score < minScore) {
-                                minScore = value;
+                                minScore = value.score;
                                 bestMove = id;
                             }
                         });
